@@ -1,0 +1,14 @@
+{% extends 'jwxt/base.html' %}
+{% block title %}登录{% endblock %}
+{% block content %}
+<h1>请先登录再访问其他页面</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="username">用户名称</label>
+        <input type="text" name="username" value="" id="username"> <br />
+        <label for="password">密码</label>
+        <input type="password" name="password" value="" id="password"> <br />
+        <input type="submit" value="登录"> <br />
+    </form>
+    <a href="/signup">注册</a>
+{% endblock %}

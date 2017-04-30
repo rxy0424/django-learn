@@ -1,0 +1,20 @@
+{% extends 'jwxt/base.html' %}
+{% block title %}{{ des_word }}{% endblock %}
+{% block content %}
+<h2 class="bg-info">{{ des_word }}
+    {% ifequal addres "discuss"  %}
+    <small>
+<a href="/discuss/new">新讨论</a>
+    </small>
+{% endifequal %}
+</h2>
+        {% if the_list %}
+        <ul>
+            {% for list in the_list %}
+            <li><a href="/{{ addres  }}/{{ list.id }}/">{{list.title}}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p> 没有{{ des_word }}</p>
+        {% endif %}
+{% endblock %}

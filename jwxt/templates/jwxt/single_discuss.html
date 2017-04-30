@@ -1,0 +1,26 @@
+{% extends 'jwxt/base.html' %}
+{% block title %}讨论：{{discuss.title}}{% endblock %}
+{% block content %}
+    <h1>{{ discuss.title }}</h1>
+    <p>学号：{{ discuss.student.studentid }}</p>
+    <p>{{ discuss.description }}</p>
+
+            <h2>回复</h2>
+        {% if replay_list %}
+            {% for replay in replay_list %}
+            <br/>
+            <p>学号：{{ replay.student.studentid }}</p>
+            <p>回复内容：{{ replay.description }}</p>
+            <br/>
+            {% endfor %}
+        {% else %}
+        <p> 没有回复</ p>
+        {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="description">内容</label>
+        <input type="text" name="description" value="" id="description"> <br />
+        <input type="submit" value="回复"> <br />
+    </form>
+{% endblock %}

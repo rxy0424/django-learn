@@ -1,0 +1,7 @@
+{% extends 'jwxt/base.html' %}
+{% block title %}课件:{{subjectfile.title}}{% endblock %}
+{% block content %}
+<h1>{{ subjectfile.title }}</h1>
+<p>{{ subjectfile.description }}</p>
+<a href={{ subjectfile.realfile.url }} target="_blank">下载附件</a>
+{% endblock %}

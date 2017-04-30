@@ -1,0 +1,10 @@
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="title">标题</label>
+        <input type="text" name="title" value="" id="title"> <br />
+        <label for="description">内容</label>
+        <input type="text" name="description" value="" id="description"> <br />
+        <input type="submit" value="提交"> <br />
+    </form>
+</body>
